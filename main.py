@@ -1,6 +1,7 @@
 import pygame
 import sys
 from obstacle import Obstacle
+from player import Player
 
 
 class Game:
@@ -9,6 +10,7 @@ class Game:
         self.screen = pygame.display.set_mode((800, 800))
         self.clock = pygame.time.Clock()
 
+        self.player = pygame.sprite.GroupSingle(Player())
         self.obstacle = pygame.sprite.GroupSingle(Obstacle())
 
     def run(self):
@@ -20,6 +22,9 @@ class Game:
 
             self.screen.fill('white')
 
+            self.player.update()
+
+            self.player.draw(self.screen)
             self.obstacle.draw(self.screen)
 
             pygame.display.update()
