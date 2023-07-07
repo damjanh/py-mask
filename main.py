@@ -27,6 +27,11 @@ class Game:
             self.player.draw(self.screen)
             self.obstacle.draw(self.screen)
 
+            if pygame.sprite.spritecollide(self.player.sprite, self.obstacle, False, pygame.sprite.collide_mask):
+                self.player.sprite.image.fill('green')
+            else:
+                self.player.sprite.image.fill('red')
+
             pygame.display.update()
             self.clock.tick(60)
 
