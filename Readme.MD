@@ -2,4 +2,4 @@
 
 Python + Pygame
 
-![Screenshot](screenshot-mask.jpg)
+![Screenshot](screenshot-mask.PNG)
